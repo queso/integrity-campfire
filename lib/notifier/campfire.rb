@@ -12,12 +12,17 @@ module Integrity
       end
 
       def deliver!
-        campfire = Tinder::Campfire.new(config['account'])
-        campfire.login(config['user'], config['pass'])
-        room = campfire.find_room_by_name(config['room'])
-
         room.speak "#{short_message}. #{build_url}"
         room.paste full_message
+      end
+
+    private
+      def room
+        @room ||= begin
+          campfire = Tinder::Campfire.new(config['account'])
+          campfire.login(config['user'], config['pass'])
+          campfire.find_room_by_name(config['room'])
+        end
       end
 
       def short_message
@@ -33,7 +38,6 @@ Commit Author: #{build.commit_author.name}
 #{stripped_build_output}
 EOM
       end
-
     end
   end
 end
