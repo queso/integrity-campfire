@@ -8,11 +8,7 @@ Gem::Specification.new do |s|
   s.email             = 'chris@ozmm.org'
   s.authors           = ['Chris Wanstrath']
   s.has_rdoc          = false
-  s.files             = %w(
-                          README.markdown
-                          lib/notifier/config.haml
-                          lib/notifier/campfire.rb
-                        )
+  s.files             = %w( README.markdown lib/notifier/config.haml lib/notifier/campfire.rb )
 
   s.add_dependency 'foca-integrity'
   s.add_dependency 'tinder'
