@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name              = 'integrity-email'
+  s.name              = 'integrity-campfire'
   s.version           = '1.0.0'
   s.date              = '2008-11-16'
   s.summary           = 'Campfire notifier for the Integrity continuous integration server'
