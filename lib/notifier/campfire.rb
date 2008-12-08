@@ -14,6 +14,7 @@ module Integrity
       def deliver!
         room.speak "#{short_message}. #{build_url}"
         room.paste full_message if build.failed?
+        room.leave
       end
 
     private
